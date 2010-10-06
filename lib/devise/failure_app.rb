@@ -79,6 +79,7 @@ module Devise
       if request.xhr?
         Devise.http_authenticatable_on_xhr
       else
+        Devise.http_authenticatable &&
         !Devise.navigational_formats.include?(request.format.to_sym)
       end
     end
